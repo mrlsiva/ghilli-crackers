@@ -65,12 +65,8 @@ const Header = ({ site }) => {
       <header className="header">
         <div className="header-top">
           <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
-            {site?.logo ? (
-              <img src={resolveAssetUrl(site.logo)} alt={site.name || 'Logo'} className="logo-image" />
-            ) : (
-              <span className="logo-icon">💥</span>
-            )}
-            <span>{site?.name ? site.name.toUpperCase() : 'VIGO CREAKERS'}</span>
+            <img src={site?.logo ? resolveAssetUrl(site.logo) : '/images/logo.svg'} alt={site.name || 'Logo'} className="logo-image" />
+            <span>{site?.name ? site.name.toUpperCase() : 'GHILLI CREAKERS'}</span>
           </Link>
           <button
             type="button"

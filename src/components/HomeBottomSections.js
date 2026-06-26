@@ -30,7 +30,7 @@ const VisitStoreSection = ({ contact }) => {
                 </svg>
               </div>
               <div>
-                <div className="qe-store-brand-name">Vigo Crackers</div>
+                <div className="qe-store-brand-name">Ghilli Crackers</div>
                 <div className="qe-store-brand-sub">Premium Fireworks Store</div>
               </div>
             </div>

@@ -28,7 +28,7 @@ const isOfferExpired = (endsAt) => {
 const DEFAULT_BANNER = {
   image: '',
   mobile_image: '',
-  title: 'Vigo Crackers',
+  title: 'Ghilli Crackers',
   second_title: 'Light Up Your Celebrations',
   description: 'Experience the finest selection of premium fireworks and crackers. Safe, certified, and delivered to your doorstep.',
   top_small_description: 'Premium Quality Fireworks Since 1990',

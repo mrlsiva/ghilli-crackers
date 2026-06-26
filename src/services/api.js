@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_BASE_URL = 'http://127.0.0.1:8000/api';
 const ASSET_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, '');
-const SITE_SLUG = 'vigo';
+const SITE_SLUG = 'ghilli';
 
 export const resolveAssetUrl = (path) => {
   if (!path) return '';

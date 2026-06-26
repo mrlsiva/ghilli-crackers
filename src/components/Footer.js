@@ -30,7 +30,7 @@ const Footer = () => {
 
   const socialLinks = contact?.social_links || [];
   const logo = site?.logo ? resolveAssetUrl(site.logo) : null;
-  const siteName = site?.name || 'Vigo Crackers';
+  const siteName = site?.name || 'Ghilli Crackers';
 
   const quickLinks = [
     { label: 'Home', to: '/home' },

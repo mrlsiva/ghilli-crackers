@@ -54,7 +54,7 @@ const WelcomePopup = () => {
             {!imageLoaded && <div className="site-popup-image-skeleton" />}
             <img
               src={content.image ? resolveAssetUrl(content.image) : '/images/logo.svg'}
-              alt={content.title || 'Vigo Creackers'}
+              alt={content.title || 'Ghilli Creackers'}
               fetchPriority="high"
               loading="eager"
               decoding="sync"
