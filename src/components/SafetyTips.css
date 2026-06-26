@@ -1,0 +1,245 @@
+/* ===== Safety Tips Page ===== */
+
+.st-page {
+  min-height: 80vh;
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fc;
+}
+
+/* Hero */
+.st-hero {
+  background: linear-gradient(135deg, #cc0033 0%, #8b0000 100%);
+  padding: 56px 24px 48px;
+  text-align: center;
+}
+.st-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.st-hero-badge {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.18);
+  border: 1px solid rgba(255, 215, 0, 0.45);
+  color: #ffd700;
+  padding: 5px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.st-hero-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+.st-hero-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Body */
+.st-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+/* Image gallery - 2 per row */
+.st-images-wrap {
+  margin-bottom: 48px;
+}
+.st-images-track {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.st-banner-img {
+  width: 100%;
+
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Tips section */
+.st-tips-section {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.st-tips-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  padding: 28px 32px 24px;
+  margin: 0;
+  border-bottom: 2px solid #cc0033;
+  background: #fff;
+  line-height: 1.4;
+}
+
+/* Table rows */
+.st-tips-table {
+  display: flex;
+  flex-direction: column;
+}
+.st-tip-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+.st-tip-row:last-child {
+  border-bottom: none;
+}
+.st-tip-row:hover {
+  background: #fff8f0;
+}
+
+.st-tip-title {
+  padding: 20px 24px 20px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-right: 1px solid #f0f0f0;
+  line-height: 1.5;
+}
+.st-tip-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #cc0033, #8b0000);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.st-tip-desc {
+  padding: 20px 32px 20px 28px;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+/* Empty */
+.st-empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: #9ca3af;
+}
+.st-empty span {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 14px;
+}
+.st-empty p {
+  font-size: 15px;
+}
+
+/* Skeleton */
+.st-skeleton-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.st-sk-banner {
+  width: 100%;
+  height: 280px;
+  border-radius: 14px;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: st-shimmer 1.4s infinite;
+}
+.st-sk-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 32px;
+  gap: 20px;
+}
+.st-sk-cell {
+  align-self: center;
+}
+.st-sk-cell-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.st-sk {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: st-shimmer 1.4s infinite;
+  border-radius: 4px;
+  display: block;
+}
+@keyframes st-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .st-hero-title {
+    font-size: 28px;
+  }
+  .st-body {
+    padding: 32px 16px 56px;
+  }
+  .st-tips-heading {
+    font-size: 17px;
+    padding: 22px 20px 18px;
+  }
+  .st-tip-row {
+    grid-template-columns: 1fr;
+  }
+  .st-tip-title {
+    padding: 18px 20px 10px;
+    border-right: none;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .st-tip-desc {
+    padding: 10px 20px 18px;
+  }
+  .st-images-track {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .st-banner-img {
+    height: 160px;
+  }
+}
+@media (max-width: 420px) {
+  .st-images-track {
+    grid-template-columns: 1fr;
+  }
+  .st-banner-img {
+    height: 220px;
+  }
+}
+@media (max-width: 480px) {
+  .st-sk-row {
+    grid-template-columns: 1fr;
+  }
+}

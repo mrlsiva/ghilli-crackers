@@ -1,0 +1,111 @@
+/* ===== About Us Page ===== */
+.au-page {
+  background: #25140e;
+  min-height: 100vh;
+  color: var(--white);
+}
+
+/* Hero */
+.au-hero {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+  padding: 64px 20px 48px;
+  text-align: center;
+}
+.au-hero-inner { max-width: 700px; margin: 0 auto; }
+.au-hero-tag {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.au-hero-title {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Body */
+.au-body {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.au-media img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.au-content {
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+.au-content h3 {
+  color: var(--primary-gold);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.au-content p { margin-bottom: 14px; }
+.au-content ul { margin: 0 0 14px 20px; }
+.au-content li { margin-bottom: 6px; }
+
+/* Features */
+.au-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.au-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #2b1810;
+  border: 1px solid #40261c;
+  border-radius: 12px;
+  padding: 18px;
+}
+.au-feature-icon { font-size: 22px; }
+.au-feature h3 {
+  font-size: 15px;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.au-feature p {
+  font-size: 13px;
+  color: var(--white);
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* Loading skeleton */
+.au-loading {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.au-sk-block {
+  height: 120px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2b1810 25%, #3a2418 50%, #2b1810 75%);
+  background-size: 200% 100%;
+  animation: au-shimmer 1.4s infinite;
+}
+@keyframes au-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

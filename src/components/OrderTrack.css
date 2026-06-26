@@ -1,0 +1,356 @@
+/* ===== Order Track Page ===== */
+
+.ot-page {
+  background: #f8f9fc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hero */
+.ot-hero {
+  background: linear-gradient(135deg, #cc0033 0%, #8b0000 100%);
+  padding: 48px 20px 60px;
+  text-align: center;
+}
+.ot-hero-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.ot-hero-icon svg {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 4px;
+}
+.ot-hero-title {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+.ot-hero-sub {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* Search form */
+.ot-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.ot-input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+.ot-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+.ot-input {
+  width: 100%;
+  padding: 14px 40px 14px 42px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  color: #1a1a2e;
+  transition: box-shadow 0.2s;
+}
+.ot-input:focus {
+  box-shadow:
+    0 0 0 3px rgba(255, 215, 0, 0.5),
+    0 2px 12px rgba(0, 0, 0, 0.15);
+}
+.ot-input-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px;
+}
+.ot-btn-track {
+  padding: 14px 28px;
+  background: #ffd700;
+  border: none;
+  border-radius: 10px;
+  color: #8b0000;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: all 0.2s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+.ot-btn-track:hover:not(:disabled) {
+  background: #fce600;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.ot-btn-track:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Hints */
+.ot-hints {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+.ot-hints span {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+}
+
+/* Spinner */
+.ot-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(139, 0, 0, 0.25);
+  border-top-color: #8b0000;
+  border-radius: 50%;
+  display: inline-block;
+  animation: ot-spin 0.7s linear infinite;
+}
+@keyframes ot-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Results area */
+.ot-results-wrap {
+  max-width: 680px;
+  margin: -24px auto 40px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Error */
+.ot-error {
+  background: #fff0f3;
+  border-left: 4px solid #cc0033;
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  color: #8b0000;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  background: #fff;
+}
+.ot-error svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #cc0033;
+}
+
+/* Order card */
+.ot-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 6px 24px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  border: 1.5px solid #f1f3f7;
+}
+.ot-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1.5px solid #f1f3f7;
+  background: #fafbff;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ot-card-label {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 3px;
+}
+.ot-card-num {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+.ot-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.ot-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Meta grid */
+.ot-card-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  padding: 4px 0;
+}
+.ot-meta-item {
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f3f7;
+}
+.ot-meta-item:nth-child(odd) {
+  border-right: 1px solid #f1f3f7;
+}
+.ot-meta-label {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+.ot-meta-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+/* Items */
+.ot-items {
+  padding: 16px 20px;
+  border-bottom: 1.5px solid #f1f3f7;
+}
+.ot-items-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 10px;
+}
+.ot-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ot-item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+.ot-item-name {
+  flex: 1;
+  color: #374151;
+  max-width: 530px;
+  word-wrap: break-word;
+}
+.ot-item-qty {
+  color: #9ca3af;
+  white-space: nowrap;
+}
+.ot-item-price {
+  font-weight: 700;
+  color: #1a1a2e;
+  white-space: nowrap;
+}
+
+/* Total */
+.ot-card-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 15px;
+  color: #6b7280;
+  background: #fafbff;
+}
+.ot-card-total strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: #cc0033;
+}
+
+/* Placeholder */
+.ot-placeholder {
+  text-align: center;
+  padding: 48px 20px;
+  color: #9ca3af;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.ot-placeholder svg {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+}
+.ot-placeholder p {
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ot-hero {
+    padding: 36px 16px 50px;
+  }
+  .ot-hero-title {
+    font-size: 24px;
+  }
+  .ot-form {
+    flex-direction: column;
+  }
+  .ot-btn-track {
+    width: 100%;
+    justify-content: center;
+  }
+  .ot-card-meta {
+    grid-template-columns: 1fr;
+  }
+  .ot-meta-item:nth-child(odd) {
+    border-right: none;
+  }
+}

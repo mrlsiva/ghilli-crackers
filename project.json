@@ -1,0 +1,27 @@
+{
+  "name": "Creakers Frontend",
+  "short_description": "Diwali Fireworks & Crackers E-Commerce",
+  "description": "A beautiful and responsive React frontend for ordering premium fireworks and crackers for Diwali celebrations",
+  "homepage": "http://localhost:3000",
+  "backend_api": "http://localhost/creakers-backend/public/api",
+  "features": [
+    "Diwali-themed UI with red and gold color scheme",
+    "Responsive design for all devices",
+    "Quick enquiry form with product selection",
+    "Order placement with customer details",
+    "WhatsApp integration",
+    "Real-time form validation",
+    "Success notifications",
+    "Safety tips and promotional content"
+  ],
+  "components": {
+    "Header": "Navigation with logo, menu, and WhatsApp link",
+    "Home": "Hero section, offers, how-to-order steps, safety tips",
+    "QuickEnquiry": "Complete order form with product selection",
+    "Footer": "Contact info, social links, quick navigation"
+  },
+  "pages": {
+    "Home": "Landing page with hero and product guides",
+    "Quick Enquiry": "Form to place product orders"
+  }
+}
