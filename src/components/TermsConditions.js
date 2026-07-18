@@ -25,9 +25,6 @@ const TermsConditions = () => {
           <p className="tc-hero-sub">Please read these terms carefully before using our services.</p>
         </div>
       </div>
-      <section className="stripe-banner">
-        <img src="/images/stripe.png" alt="Stripe banner" />
-      </section>
       <div className="tc-body">
         {loading ? (
           <div className="tc-skeleton">

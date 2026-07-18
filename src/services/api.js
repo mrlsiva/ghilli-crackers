@@ -87,6 +87,7 @@ export const getProducts = (filters = {}, slug = SITE_SLUG) => {
   if (filters.category) params.append('category', filters.category);
   if (filters.search) params.append('search', filters.search);
   if (filters.per_page) params.append('per_page', filters.per_page);
+  if (filters.bestseller) params.append('bestseller', '1');
   return api.get(`/${slug}/products?${params.toString()}`).then((r) => r.data);
 };
 
@@ -164,6 +165,10 @@ export const getSafetyTips = (slug = SITE_SLUG) =>
 export const getPriceLists = (slug = SITE_SLUG) =>
   cached(`price-lists:${slug}`, () => api.get(`/${slug}/price-lists`).then((r) => r.data));
 
+// FAQs
+export const getFaqs = (slug = SITE_SLUG) =>
+  cached(`faqs:${slug}`, () => api.get(`/${slug}/faqs`).then((r) => r.data));
+
 // Prefetch all static data in one parallel burst.
 // Call once on app startup — populates both memory + localStorage so
 // every page/component gets instant data with no individual loading waits.
@@ -176,6 +181,7 @@ export const prefetchAll = (slug = SITE_SLUG) =>
     getContact(slug),
     getClientLogos(slug),
     getOrderSteps(slug),
+    getFaqs(slug),
     getContentPage(slug, 'about-us'),
     getContentPage(slug, 'banner-scrolling-text'),
   ]);

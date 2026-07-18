@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getCategories, getProducts, resolveAssetUrl } from '../services/api';
 import './Products.css';
 
@@ -8,10 +9,23 @@ const getImage = (product) => {
   return resolveAssetUrl(img);
 };
 
+const getDiscountBadge = (product) => {
+  const mrp = product.pricing?.mrp || 0;
+  const ourPrice = product.pricing?.our_price || product.price || 0;
+  const savings = product.pricing?.savings || (mrp > ourPrice ? mrp - ourPrice : 0);
+  const discountType = product.pricing?.discount_type;
+  const discountValue = product.pricing?.discount_value;
+  if (discountValue > 0) {
+    return discountType === 'flat' ? `₹${discountValue} OFF` : `${discountValue}% OFF`;
+  }
+  return savings > 0 && mrp > 0 ? `${Math.round((savings / mrp) * 100)}% OFF` : null;
+};
+
 const Products = () => {
+  const [searchParams] = useSearchParams();
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(() => searchParams.get('category'));
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,6 +36,18 @@ const Products = () => {
       .then(data => { if (data.success) setCategories(data.data || []); })
       .catch(() => {});
   }, []);
+
+  // Most common discount badge among currently loaded products, e.g. "75% OFF"
+  const mostUsedOffer = useMemo(() => {
+    const counts = {};
+    products.forEach(product => {
+      const badge = getDiscountBadge(product);
+      if (badge) counts[badge] = (counts[badge] || 0) + 1;
+    });
+    const entries = Object.entries(counts);
+    if (entries.length === 0) return null;
+    return entries.reduce((best, entry) => (entry[1] > best[1] ? entry : best))[0];
+  }, [products]);
 
   useEffect(() => {
     setLoading(true);
@@ -126,14 +152,16 @@ const Products = () => {
               ))}
             </ul>
 
-            <div className="pl-sidebar-offer">
-              <div className="pl-offer-badge">80% OFF</div>
-              <p className="pl-offer-text">On selected products this Diwali season!</p>
-              <div className="pl-offer-min">
-                <span>Min Order</span>
-                <strong>TN ₹3,000 · Others ₹5,000</strong>
+            {mostUsedOffer && (
+              <div className="pl-sidebar-offer">
+                <div className="pl-offer-badge">{mostUsedOffer}</div>
+                <p className="pl-offer-text">On selected products this Diwali season!</p>
+                <div className="pl-offer-min">
+                  <span>Min Order</span>
+                  <strong>TN ₹3,000 · Others ₹5,000</strong>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </aside>
 
@@ -189,9 +217,7 @@ const Products = () => {
                 const savings = product.pricing?.savings || (mrp > ourPrice ? mrp - ourPrice : 0);
                 const discountType = product.pricing?.discount_type;
                 const discountValue = product.pricing?.discount_value;
-                const discountBadge = discountValue > 0
-                  ? (discountType === 'flat' ? `₹${discountValue} OFF` : `${discountValue}% OFF`)
-                  : (savings > 0 && mrp > 0 ? `${Math.round((savings / mrp) * 100)}% OFF` : null);
+                const discountBadge = getDiscountBadge(product);
                 const imgSrc = getImage(product);
 
                 return (

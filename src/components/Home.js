@@ -3,6 +3,10 @@ import { getHomeBanner, getFestivalOffer, resolveAssetUrl } from '../services/ap
 import AboutSection from './AboutSection';
 import HowToOrder from './HowToOrder';
 import HomeBottomSections from './HomeBottomSections';
+import ExclusiveCategories from './ExclusiveCategories';
+import BestSellers from './BestSellers';
+import BrowseByCategory from './BrowseByCategory';
+import FaqSection from './FaqSection';
 
 const MOBILE_QUERY = '(max-width: 768px)';
 
@@ -141,9 +145,12 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="stripe-banner">
-        <img src="/images/stripe.png" alt="Stripe banner" />
-      </section>
+
+      <ExclusiveCategories />
+      <BestSellers />
+      <BrowseByCategory />
+      <FaqSection />
+
 
       {festivalOffer && !isOfferExpired(festivalOffer.ends_at) && (
         <section className="festival-offer">
@@ -188,15 +195,8 @@ const Home = () => {
           </div>
         </section>
       )}
-      <section className="stripe-banner">
-        <img src="/images/stripe.png" alt="Stripe banner" />
-      </section>
       <AboutSection teaser />
-
-      <section className="stripe-banner">
-        <img src="/images/stripe.png" alt="Stripe banner" />
-      </section>
-      <HowToOrder />
+  
       <HomeBottomSections />
     </div>
   );

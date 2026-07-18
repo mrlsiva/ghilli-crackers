@@ -1,3 +1,16 @@
+
+/* Diwali Color Theme */
+:root {
+  --primary-red: #0051A7;
+  --primary-gold: #02DBB8;
+  --primary-orange: #00286F;
+  --dark-red: #00286F;
+  --light-gold: #fff8dc;
+  --white: #ffffff;
+  --dark-bg: #1a1a1a;
+  --light-gray: #f5f5f5;
+  --text-color: #2B2230
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,20 +21,9 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   color: #333;
-  background: #25140e;
+  background: var(--white);
 }
 
-/* Diwali Color Theme */
-:root {
-  --primary-red: #cc0033;
-  --primary-gold: #ffd700;
-  --primary-orange: #ff8c00;
-  --dark-red: #8b0000;
-  --light-gold: #fff8dc;
-  --white: #ffffff;
-  --dark-bg: #1a1a1a;
-  --light-gray: #f5f5f5;
-}
 
 html,
 body,
@@ -49,7 +51,7 @@ body.menu-open {
 }
 
 .header {
-  background: linear-gradient(135deg, #2b1710 0%, #1a0f0a 100%);
+  background: var(--primary-orange);
   color: var(--white);
   padding: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -61,7 +63,7 @@ body.menu-open {
     var(--primary-gold),
     var(--primary-orange)
   );
-  color: var(--dark-red);
+  color: var(--white);
   padding: 8px 0;
   font-size: 14px;
   font-weight: 600;
@@ -128,7 +130,7 @@ body.menu-open {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 40%, #7a0a0a 0%, #5c0606 55%, #3d0303 100%);
+  background: radial-gradient(circle at 50% 40%, #0B2E66 0%, #07204D 55%, #041530 100%);
 }
 
 .firework {
@@ -138,7 +140,7 @@ body.menu-open {
   border-radius: 50%;
   background: repeating-conic-gradient(
     from 0deg,
-    var(--firework-color, var(--primary-gold, #ffd700)) 0deg 3deg,
+    var(--firework-color, var(--primary-gold, #0051A7)) 0deg 3deg,
     transparent 3deg 26deg
   );
   -webkit-mask-image: radial-gradient(circle, #000 0%, #000 25%, transparent 72%);
@@ -147,10 +149,10 @@ body.menu-open {
   animation: firework-burst 2.6s ease-out infinite;
 }
 
-.firework-1 { top: 12%; left: 14%; --firework-color: #ffd700; animation-delay: 0s; }
+.firework-1 { top: 12%; left: 14%; --firework-color: #0051A7; animation-delay: 0s; }
 .firework-2 { top: 18%; left: 78%; --firework-color: #ff6347; animation-delay: 0.6s; }
 .firework-3 { top: 65%; left: 8%; --firework-color: #ff8fc7; animation-delay: 1.1s; }
-.firework-4 { top: 70%; left: 82%; --firework-color: #ffd700; animation-delay: 1.6s; }
+.firework-4 { top: 70%; left: 82%; --firework-color: #0051A7; animation-delay: 1.6s; }
 .firework-5 { top: 8%; left: 48%; --firework-color: #ffa500; animation-delay: 0.3s; }
 .firework-6 { top: 75%; left: 50%; --firework-color: #ff6347; animation-delay: 2s; }
 
@@ -197,7 +199,7 @@ body.menu-open {
   height: 36px;
   width: 36px;
   border: 4px solid rgba(255, 255, 255, 0.25);
-  border-top-color: var(--primary-gold, #ffd700);
+  border-top-color: var(--primary-gold, #0051A7);
   border-radius: 50%;
   animation: page-loader-spin 0.8s linear infinite;
 }
@@ -254,13 +256,13 @@ body.menu-open {
 
 .nav-links a:hover {
   color: var(--primary-gold);
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  text-shadow: 0 0 10px rgba(0, 81, 167, 0.5);
 }
 
 .nav-links a.nav-active {
-  color: var(--primary-gold);
+  color: var(--white);
   font-weight: 700;
-  border-bottom: 2px solid var(--primary-gold);
+  border-bottom: 2px solid var(--white);
   padding-bottom: 2px;
 }
 
@@ -289,7 +291,7 @@ body.menu-open {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 81, 167, 0.3);
 }
 
 .btn-secondary {
@@ -352,7 +354,7 @@ body.menu-open {
 
 .btn-order-now {
   background: var(--primary-gold);
-  color: var(--dark-red);
+  color: var(--white);
   padding: 10px 26px;
   border-radius: 24px;
 }
@@ -405,27 +407,15 @@ body.menu-open {
   padding-top: var(--header-height, 100px);
 }
 
-/* Stripe banner */
-.stripe-banner {
-  width: 100%;
-  overflow: hidden;
-}
-
-.stripe-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* Hero Banner */
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
+  align-items: start;
   background:
-    linear-gradient(rgba(74, 10, 20, 0.85), rgba(40, 5, 10, 0.9)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="p" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="3" fill="%23FFD700" opacity="0.3"/><text x="20" y="60" font-size="40" fill="%23FF8C00" opacity="0.2">✨</text></pattern></defs><rect width="1200" height="600" fill="%238B0000"/><rect width="1200" height="600" fill="url(%23p)"/></svg>');
+    linear-gradient(rgba(0, 30, 74, 0.85), rgba(0, 15, 40, 0.9)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="p" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="3" fill="%230051A7" opacity="0.3"/><text x="20" y="60" font-size="40" fill="%230051A7" opacity="0.2">✨</text></pattern></defs><rect width="1200" height="600" fill="%2300286F"/><rect width="1200" height="600" fill="url(%23p)"/></svg>');
   color: var(--white);
   padding: 90px 30px;
   text-align: center;
@@ -435,9 +425,9 @@ body.menu-open {
 
 .hero-badge {
   display: inline-block;
-  background: #790d0d;
+  background: var(--primary-gold);
   border: 1px solid var(--primary-gold);
-  color: var(--primary-gold);
+  color: var(--white);
   padding: 8px 20px;
   border-radius: 30px;
   font-size: 13px;
@@ -510,7 +500,7 @@ body.menu-open {
   justify-content: space-between;
   gap: 30px;
   color: var(--white);
-  box-shadow: 0 12px 40px #ffa50036;
+  box-shadow: 0 12px 40px #0051A736;
   overflow: hidden;
   border: 1px solid #40261c;
 }
@@ -524,10 +514,10 @@ body.menu-open {
   height: 12px;
   background: repeating-linear-gradient(
     90deg,
-    rgba(255, 215, 0, 0.95) 0,
-    rgba(255, 215, 0, 0.95) 10px,
-    rgba(204, 0, 51, 0.95) 10px,
-    rgba(204, 0, 51, 0.95) 20px
+    rgba(0, 81, 167, 0.95) 0,
+    rgba(0, 81, 167, 0.95) 10px,
+    rgba(0, 81, 167, 0.95) 10px,
+    rgba(0, 81, 167, 0.95) 20px
   );
   opacity: 0.95;
 } */
@@ -635,14 +625,14 @@ body.menu-open {
 .about-us-title {
   font-size: 36px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--text-color);
   line-height: 1.25;
   margin-bottom: 18px;
 }
 
 .about-us-content p {
   font-size: 15px;
-  color: var(--white);
+  color: var(--text-color);
   opacity: 0.85;
   max-width: 560px;
   margin-bottom: 16px;
@@ -797,7 +787,7 @@ body.menu-open {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 193, 7, 0.12);
+  background: rgba(0, 81, 167, 0.12);
   border: 1px solid var(--primary-gold);
   color: var(--primary-gold);
   padding: 5px 14px;
@@ -857,7 +847,7 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   cursor: default;
-  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 81, 167, 0.4);
 }
 
 /* Headphones with glow */
@@ -875,7 +865,7 @@ body.menu-open {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(255, 193, 7, 0.35) 0%,
+    rgba(0, 81, 167, 0.35) 0%,
     transparent 70%
   );
 }
@@ -891,7 +881,7 @@ body.menu-open {
   color: #1a0800;
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 24px rgba(255, 193, 7, 0.5);
+  box-shadow: 0 0 24px rgba(0, 81, 167, 0.5);
 }
 
 .hto-channels {
@@ -1094,7 +1084,7 @@ body.menu-open {
   width: 100%;
   border-radius: 16px;
   display: block;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); */
 }
 
 @media (max-width: 900px) {
@@ -1189,8 +1179,8 @@ body.menu-open {
 }
 
 .footer-new-social-link:hover {
-  border-color: #f59e0b;
-  background: rgba(245, 158, 11, 0.1);
+  border-color: #0051A7;
+  background: rgba(0, 81, 167, 0.1);
 }
 
 .footer-new-social-icon-img {
@@ -1203,7 +1193,7 @@ body.menu-open {
 .footer-new-social-fallback {
   font-size: 13px;
   font-weight: 700;
-  color: #f59e0b;
+  color: #0051A7;
 }
 
 /* Link columns */
@@ -1231,7 +1221,7 @@ body.menu-open {
 }
 
 .footer-new-link:hover {
-  color: #f59e0b;
+  color: #0051A7;
 }
 
 /* Bottom bar */
@@ -1266,7 +1256,7 @@ body.menu-open {
 }
 
 .footer-new-policy-link:hover {
-  color: #f59e0b;
+  color: #0051A7;
 }
 
 .footer-new-dot {
@@ -1540,7 +1530,7 @@ body.menu-open {
   justify-content: space-between;
   padding: 20px 24px;
   border-bottom: 1px solid #f1f3f7;
-  background: linear-gradient(135deg, #cc0033 0%, #8b0000 100%);
+  background: linear-gradient(135deg, #0051A7 0%, #00286F 100%);
 }
 
 .site-popup-header h3 {

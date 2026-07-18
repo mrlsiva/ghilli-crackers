@@ -103,8 +103,8 @@ const VisitStoreSection = ({ contact }) => {
               {['Easy Parking','Genuine Products','Friendly Service','Store Pickup'].map((a, i) => (
                 <div key={i} className="qe-store-amenity">
                   <svg viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="7" stroke="#F59E0B" strokeWidth="1.2"/>
-                    <path d="M5 8l2 2 4-4" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="8" cy="8" r="7" stroke="#0051A7" strokeWidth="1.2"/>
+                    <path d="M5 8l2 2 4-4" stroke="#0051A7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   {a}
                 </div>
@@ -138,7 +138,7 @@ const VisitStoreSection = ({ contact }) => {
               </>
             ) : (
               <div className="qe-store-map-fallback">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="1.5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0051A7" strokeWidth="1.5">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
@@ -169,9 +169,6 @@ const HomeBottomSections = () => {
     <>
       {brands.length > 0 && (
         <>
-          <section className="stripe-banner">
-            <img src="/images/stripe.png" alt="" />
-          </section>
           <section className="qe-brands-section">
             <div className="qe-brands-inner">
               <h2 className="qe-brands-title">
@@ -190,11 +187,11 @@ const HomeBottomSections = () => {
                       ) : (
                         <div className="qe-brand-icon-wrap">
                           <svg viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="8" y="2" width="24" height="28" rx="4" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" strokeWidth="1.5"/>
-                            <circle cx="20" cy="16" r="8" fill="#F59E0B" opacity="0.2" stroke="#F59E0B" strokeWidth="1.5"/>
-                            <path d="M16 16l3 3 5-6" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M14 30l6 4 6-4" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            <rect x="17" y="30" width="6" height="12" rx="1" fill="#F59E0B" opacity="0.4"/>
+                            <rect x="8" y="2" width="24" height="28" rx="4" fill="#0051A7" opacity="0.15" stroke="#0051A7" strokeWidth="1.5"/>
+                            <circle cx="20" cy="16" r="8" fill="#0051A7" opacity="0.2" stroke="#0051A7" strokeWidth="1.5"/>
+                            <path d="M16 16l3 3 5-6" stroke="#0051A7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M14 30l6 4 6-4" stroke="#0051A7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <rect x="17" y="30" width="6" height="12" rx="1" fill="#0051A7" opacity="0.4"/>
                           </svg>
                         </div>
                       )}
@@ -210,9 +207,6 @@ const HomeBottomSections = () => {
 
       {contact && (
         <>
-          <section className="stripe-banner">
-            <img src="/images/stripe.png" alt="" />
-          </section>
           <VisitStoreSection contact={contact} />
         </>
       )}

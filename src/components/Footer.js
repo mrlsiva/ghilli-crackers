@@ -42,9 +42,7 @@ const Footer = () => {
 
   return (
     <footer className="footer-new">
-      <section className="stripe-banner">
-        <img src="/images/stripe.png" alt="Stripe banner" />
-      </section>
+
       <div className="footer-new-content">
         {/* Brand column */}
         <div className="footer-new-brand">

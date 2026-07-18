@@ -7,7 +7,7 @@
 
 /* Hero */
 .ct-hero {
-  background: linear-gradient(135deg, #CC0033 0%, #8B0000 100%);
+  background: linear-gradient(135deg, #0051A7 0%, #00286F 100%);
   padding: 48px 20px 36px;
   text-align: center;
 }
@@ -117,7 +117,7 @@ a.ct-card-value:hover { color: var(--card-color); text-decoration: underline; }
 
 /* Brand box */
 .ct-brand-box {
-  background: linear-gradient(135deg, #CC0033 0%, #8B0000 100%);
+  background: linear-gradient(135deg, #0051A7 0%, #00286F 100%);
   border-radius: 16px;
   padding: 36px 28px;
   display: flex;
@@ -128,7 +128,7 @@ a.ct-card-value:hover { color: var(--card-color); text-decoration: underline; }
 }
 .ct-brand-icon { font-size: 42px; line-height: 1; }
 .ct-brand-name {
-  color: #FFD700;
+  color: #0051A7;
   font-size: 22px;
   font-weight: 800;
   margin: 0;
@@ -206,7 +206,7 @@ a.ct-card-value:hover { color: var(--card-color); text-decoration: underline; }
   text-decoration: none;
   flex: 1;
 }
-a.ct-detail-val { color: #CC0033; }
+a.ct-detail-val { color: #0051A7; }
 a.ct-detail-val:hover { text-decoration: underline; }
 
 /* Map */
@@ -230,14 +230,14 @@ a.ct-detail-val:hover { text-decoration: underline; }
 .ct-map-header svg {
   width: 18px;
   height: 18px;
-  stroke: #CC0033;
+  stroke: #0051A7;
   flex-shrink: 0;
 }
 .ct-map-open {
   margin-left: auto;
   font-size: 12px;
   font-weight: 600;
-  color: #CC0033;
+  color: #0051A7;
   text-decoration: none;
 }
 .ct-map-open:hover { text-decoration: underline; }
@@ -281,12 +281,12 @@ a.ct-detail-val:hover { text-decoration: underline; }
 .ct-tel-link {
   display: block;
   text-decoration: none;
-  color: #CC0033;
+  color: #0051A7;
   font-weight: 600;
   line-height: 1.7;
 }
 .ct-tel-link:hover { text-decoration: underline; }
-.ct-link { color: #CC0033; text-decoration: none; }
+.ct-link { color: #0051A7; text-decoration: none; }
 .ct-link:hover { text-decoration: underline; }
 
 /* Social icons from API */

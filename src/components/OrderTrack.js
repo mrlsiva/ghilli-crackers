@@ -74,7 +74,7 @@ const OrderTrack = () => {
           <div className="ot-hero-icon">
             <svg viewBox="0 0 48 48" fill="none">
               <circle cx="24" cy="24" r="22" fill="rgba(255,255,255,0.12)"/>
-              <path d="M14 20h20M14 24h14M14 28h10" stroke="#FFD700" strokeWidth="2.5" strokeLinecap="round"/>
+              <path d="M14 20h20M14 24h14M14 28h10" stroke="#0051A7" strokeWidth="2.5" strokeLinecap="round"/>
               <rect x="10" y="12" width="28" height="24" rx="3" stroke="#fff" strokeWidth="2.5"/>
               <circle cx="36" cy="36" r="8" fill="#22c55e"/>
               <path d="M32.5 36l2.5 2.5 4-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

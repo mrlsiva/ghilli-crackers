@@ -8,7 +8,7 @@
 
 /* Hero / Header */
 .pl-hero {
-  background: linear-gradient(135deg, #CC0033 0%, #8B0000 100%);
+  background: linear-gradient(135deg, #0051A7 0%, #00286F 100%);
   padding: 36px 20px 30px;
 }
 .pl-hero-inner {
@@ -54,7 +54,7 @@
   box-sizing: border-box;
   transition: box-shadow 0.2s;
 }
-.pl-search:focus { box-shadow: 0 0 0 3px rgba(255,215,0,0.4); }
+.pl-search:focus { box-shadow: 0 0 0 3px rgba(0, 81, 167,0.4); }
 .pl-search-clear {
   position: absolute;
   right: 10px;
@@ -97,11 +97,11 @@
   transition: all 0.15s;
   white-space: nowrap;
 }
-.pl-pill:hover { background: #ffe4b5; border-color: #FFD700; }
+.pl-pill:hover { background: #D8E8FA; border-color: #0051A7; }
 .pl-pill-active {
-  background: #CC0033;
+  background: #0051A7;
   color: #fff;
-  border-color: #CC0033;
+  border-color: #0051A7;
 }
 .pl-pill-count {
   background: rgba(0,0,0,0.15);
@@ -165,12 +165,12 @@
   text-align: left;
   gap: 6px;
 }
-.pl-cat-btn:hover { background: #fef3c7; color: #CC0033; }
+.pl-cat-btn:hover { background: #DCEAFB; color: #0051A7; }
 .pl-cat-btn.active {
   background: linear-gradient(90deg, #fff0f3, #fff8f0);
-  color: #CC0033;
+  color: #0051A7;
   font-weight: 600;
-  border-left: 3px solid #CC0033;
+  border-left: 3px solid #0051A7;
 }
 .pl-cat-name { flex: 1; }
 .pl-cat-count {
@@ -180,14 +180,14 @@
   padding: 1px 7px;
   border-radius: 10px;
 }
-.pl-cat-btn.active .pl-cat-count { background: rgba(204,0,51,0.1); color: #CC0033; }
+.pl-cat-btn.active .pl-cat-count { background: rgba(0, 81, 167,0.1); color: #0051A7; }
 .pl-cat-arrow { color: #d1d5db; font-size: 16px; }
-.pl-cat-btn.active .pl-cat-arrow { color: #CC0033; }
+.pl-cat-btn.active .pl-cat-arrow { color: #0051A7; }
 
 /* Sidebar Offer Box */
 .pl-sidebar-offer {
   margin: 8px 12px 12px;
-  background: linear-gradient(135deg, #CC0033 0%, #8B0000 100%);
+  background: linear-gradient(135deg, #0051A7 0%, #00286F 100%);
   border-radius: 10px;
   padding: 16px;
   color: #fff;
@@ -195,8 +195,8 @@
 }
 .pl-offer-badge {
   display: inline-block;
-  background: #FFD700;
-  color: #8B0000;
+  background: #02DBB8;
+  color: #00286F;
   font-size: 20px;
   font-weight: 800;
   padding: 4px 14px;
@@ -211,16 +211,16 @@
   line-height: 1.5;
 }
 .pl-offer-min {
-  background: rgba(0,0,0,0.2);
+  background: #02DBB8;
   border-radius: 6px;
   padding: 8px;
   font-size: 11px;
-  color: rgba(255,255,255,0.7);
+  color: #0051A7;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-.pl-offer-min strong { color: #FFD700; font-size: 12px; }
+.pl-offer-min strong { color: #0051A7; font-size: 12px; }
 
 /* Main */
 .pl-main { min-width: 0; }
@@ -236,7 +236,7 @@
   font-size: 13px;
   color: #6b7280;
 }
-.pl-active-cat { color: #CC0033; font-weight: 600; }
+.pl-active-cat { color: #0051A7; font-weight: 600; }
 .pl-clear-filters {
   background: none;
   border: 1.5px solid #e5e7eb;
@@ -248,12 +248,12 @@
   cursor: pointer;
   transition: all 0.15s;
 }
-.pl-clear-filters:hover { border-color: #CC0033; color: #CC0033; }
+.pl-clear-filters:hover { border-color: #0051A7; color: #0051A7; }
 
 .pl-error {
   background: #fff0f3;
-  border-left: 4px solid #CC0033;
-  color: #8B0000;
+  border-left: 4px solid #0051A7;
+  color: #00286F;
   padding: 12px 16px;
   border-radius: 0 8px 8px 0;
   font-size: 13px;
@@ -279,9 +279,9 @@
   cursor: pointer;
 }
 .pl-card:hover {
-  box-shadow: 0 10px 32px rgba(204,0,51,0.13);
+  box-shadow: 0 10px 32px rgba(0, 81, 167,0.13);
   transform: translateY(-4px);
-  border-color: #FFD700;
+  border-color: #0051A7;
 }
 
 /* Card image */
@@ -315,13 +315,13 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background: linear-gradient(135deg, #CC0033, #e8003b);
+  background: linear-gradient(135deg, #0051A7, #0066CC);
   color: #fff;
   font-size: 11px;
   font-weight: 800;
   padding: 4px 10px;
   border-radius: 20px;
-  box-shadow: 0 3px 8px rgba(204,0,51,0.4);
+  box-shadow: 0 3px 8px rgba(0, 81, 167,0.4);
   letter-spacing: 0.02em;
 }
 
@@ -377,7 +377,7 @@
 .pl-card-price {
   font-size: 20px;
   font-weight: 800;
-  color: #CC0033;
+  color: #0051A7;
   line-height: 1;
 }
 .pl-card-save {
