@@ -64,7 +64,7 @@ const Header = ({ site }) => {
       </div>
       <header className="header">
         <div className="header-top">
-          <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
+          <Link to="/home" className="logo" style={{ textDecoration: 'none' }}>
             <img src={site?.logo ? resolveAssetUrl(site.logo) : '/images/logo.svg'} alt={site.name || 'Logo'} className="logo-image" />
             <span>{site?.name ? site.name.toUpperCase() : 'GHILLI CREAKERS'}</span>
           </Link>
@@ -113,14 +113,14 @@ const Header = ({ site }) => {
               <Link to="/order-track" className="call-now">
                 <span aria-hidden="true">📦</span> Order Track
               </Link>
-              <Link to="/" className="btn btn-order-now">Order Now</Link>
+              <Link to="/order" className="btn btn-order-now">Order Now</Link>
             </div>
           </nav>
           <div className="header-actions header-actions-desktop">
             <Link to="/order-track" className="call-now">
               <span aria-hidden="true">📦</span> Order Track
             </Link>
-            <Link to="/" className="btn btn-order-now">Order Now</Link>
+            <Link to="/order" className="btn btn-order-now">Order Now</Link>
           </div>
         </div>
       </header>

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getContact } from '../services/api';
+import { getContact, resolveAssetUrl } from '../services/api';
 import './Contact.css';
-
-const API_BASE = 'http://127.0.0.1:8000';
 
 const Contact = () => {
   const [contact, setContact] = useState(null);
@@ -151,7 +149,7 @@ const Contact = () => {
                   >
                     {s.icon ? (
                       <img
-                        src={s.icon.startsWith('http') ? s.icon : `${API_BASE}${s.icon}`}
+                        src={resolveAssetUrl(s.icon)}
                         alt={s.label}
                         className="ct-social-icon"
                       />

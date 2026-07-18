@@ -1,14 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { getCategories, getProducts } from '../services/api';
+import { getCategories, getProducts, resolveAssetUrl } from '../services/api';
 import './Products.css';
-
-const API_BASE = 'http://127.0.0.1:8000';
 
 const getImage = (product) => {
   const img = product.image || product.thumbnail || (product.images && product.images[0]);
   if (!img) return null;
-  if (img.startsWith('http')) return img;
-  return `${API_BASE}${img}`;
+  return resolveAssetUrl(img);
 };
 
 const Products = () => {

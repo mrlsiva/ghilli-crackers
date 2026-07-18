@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getContact, getCategories, getSite, getPriceLists, resolveAssetUrl } from '../services/api';
 
-const API_BASE = 'http://127.0.0.1:8000';
-
 const Footer = () => {
   const [contact, setContact] = useState(null);
   const [categories, setCategories] = useState([]);
@@ -77,7 +75,7 @@ const Footer = () => {
                   >
                     {s.icon ? (
                       <img
-                        src={s.icon.startsWith('http') ? s.icon : `${API_BASE}${s.icon}`}
+                        src={resolveAssetUrl(s.icon)}
                         alt={s.label}
                         className="footer-new-social-icon-img"
                       />

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import HowToOrder from './components/HowToOrder';
@@ -90,12 +91,14 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <WelcomePopup />
       <Header site={site} />
       <main className="main">
         <Routes>
-          <Route path="/" element={<QuickEnquiry />} />
+          <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/order" element={<QuickEnquiry />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/how-to-order" element={<HowToOrder />} />
           <Route path="/products" element={<Products />} />

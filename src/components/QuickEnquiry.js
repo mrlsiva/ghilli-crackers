@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { getProducts, placeOrder } from '../services/api';
+import { getProducts, placeOrder, resolveAssetUrl } from '../services/api';
 import './QuickEnquiry.css';
 
-const API_BASE = 'http://127.0.0.1:8000';
 const CART_STORAGE_KEY = 'vigo_qe_cart';
 
 const loadStoredCart = () => {
@@ -156,8 +155,7 @@ const QuickEnquiry = () => {
 const getImage = (product) => {
     const img = product.image || product.thumbnail || (product.images && product.images[0]);
     if (!img) return null;
-    if (img.startsWith('http')) return img;
-    return `${API_BASE}${img}`;
+    return resolveAssetUrl(img);
   };
 
   return (
