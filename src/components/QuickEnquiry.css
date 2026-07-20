@@ -324,7 +324,7 @@
 }
 .qe-min-order-warn {
   background: #0051A7;
-  color: #1a1a2e;
+  color: var(--white);
   font-size: 12px;
   font-weight: 600;
   text-align: center;
@@ -332,7 +332,7 @@
 }
 .qe-cart-min-label {
   font-size: 10px;
-  color: #0051A7;
+    color: var(--white);
   font-weight: 600;
   letter-spacing: 0.3px;
 }
@@ -387,7 +387,7 @@
   letter-spacing: 0.8px;
 }
 .qe-cart-total-amount {
-  color: #0051A7;
+    color: var(--white);
   font-size: 22px;
   font-weight: 700;
   line-height: 1.1;
