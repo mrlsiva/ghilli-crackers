@@ -96,7 +96,7 @@
 }
 .ot-btn-track {
   padding: 14px 28px;
-  background: #0051A7;
+  background: var(--primary-gold);
   border: none;
   border-radius: 10px;
   color: #00286F;

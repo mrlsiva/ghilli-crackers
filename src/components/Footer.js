@@ -38,6 +38,7 @@ const Footer = () => {
     { label: 'Safety Tips', to: '/safety-tips' },
     { label: 'Price List', to: '/price-list' },
     { label: 'Visit Store', to: '/contact' },
+    { label: 'Partner Brands', to: '/home#partner-brands' },
   ];
 
   return (
@@ -125,7 +126,8 @@ const Footer = () => {
           © {new Date().getFullYear()} {siteName}. All rights reserved. | Crafted with premium quality since 1990.
         </span>
         <div className="footer-new-policies">
-          <Link to="/terms-conditions" className="footer-new-policy-link">Terms &amp; Conditions</Link>
+          <Link to="/terms-conditions" className="footer-new-policy-link">Terms of Service</Link>
+          <Link to="/safety-tips" className="footer-new-policy-link">Safety Guide</Link>
         </div>
       </div>
     </footer>

@@ -125,8 +125,9 @@ const Home = () => {
         style={heroImage ? { backgroundImage: `url(${resolveAssetUrl(heroImage)})` } : undefined}
       >
         <div className="hero-content">
-          <span className="hero-badge">✨ {banner.top_small_description}</span>
-          <h1>{banner.title}</h1>
+          <span className="hero-badge">{banner.top_small_description}</span>
+          <h1 className="white">{banner.title}</h1>
+          <h1>{banner.title2}</h1>
           <h2 className="hero-subtitle">{banner.second_title}</h2>
           <p>{banner.description}</p>
           <div className="hero-cta">

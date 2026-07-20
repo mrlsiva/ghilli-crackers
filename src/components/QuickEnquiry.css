@@ -861,46 +861,87 @@
   text-align: center;
 }
 
-/* ===== Visit Our Store Section ===== */
+/* ===== Visit Our Store Section (card overlaid on map) ===== */
 .qe-store-section {
-  background: #1a0f0a;
-  padding: 72px 20px;
+  position: relative;
+  min-height: 720px;
+  padding: 48px 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.qe-store-map-wrap {
+  position: absolute;
+  inset: 0;
+  background: #eef1f5;
+}
+.qe-store-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.qe-store-map-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+  color: #00286F;
+  font-size: 14px;
+}
+.qe-store-map-fallback svg {
+  width: 48px;
+  height: 48px;
 }
 .qe-store-inner {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
+.qe-store-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 40px 32px;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.qe-store-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background: rgba(2, 219, 184, 0.14);
+  color: #049682;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
 .qe-store-header {
-  text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 20px;
 }
 .qe-store-title {
   font-size: 32px;
   font-weight: 800;
-  color: #fff;
+  color: #14181f;
   margin-bottom: 12px;
+  line-height: 1.15;
+}
+.qe-store-title-accent {
+  color: #02DBB8;
 }
 .qe-store-subtitle {
-  font-size: 15px;
-  color: rgba(255,255,255,0.6);
-  max-width: 520px;
-  margin: 0 auto;
+  font-size: 14px;
+  color: #6b7280;
   line-height: 1.7;
-}
-.qe-store-body {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 28px;
-  align-items: stretch;
-}
-.qe-store-card {
-  background: #2b1810;
-  border: 1px solid #3a2418;
-  border-radius: 20px;
-  padding: 28px 28px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 }
 .qe-store-card-top {
   display: flex;
@@ -911,13 +952,13 @@
 .qe-store-brand-icon {
   width: 52px;
   height: 52px;
-  background: #0051A7;
+  background: #02DBB8;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #1a0800;
+  color: #fff;
 }
 .qe-store-brand-icon svg {
   width: 26px;
@@ -926,25 +967,20 @@
 .qe-store-brand-name {
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: #14181f;
   line-height: 1.2;
 }
 .qe-store-brand-sub {
   font-size: 12px;
-  color: #0051A7;
+  color: #6b7280;
   font-weight: 500;
   margin-top: 2px;
-}
-.qe-store-divider {
-  height: 1px;
-  background: #3a2418;
-  margin: 0 0 20px;
 }
 .qe-store-info-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 .qe-store-info-row {
   display: flex;
@@ -954,13 +990,13 @@
 .qe-store-info-icon {
   width: 36px;
   height: 36px;
-  background: rgba(0, 81, 167,0.12);
+  background: #fdf1e3;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #0051A7;
+  color: #c6793d;
 }
 .qe-store-info-icon svg {
   width: 17px;
@@ -971,38 +1007,19 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  color: rgba(255,255,255,0.45);
+  color: #9aa1ad;
   margin-bottom: 3px;
 }
 .qe-store-info-val {
   font-size: 13px;
-  color: #e2d5c8;
+  color: #384152;
   line-height: 1.55;
 }
 .qe-store-tel {
-  color: #e2d5c8;
+  color: #384152;
   text-decoration: none;
 }
-.qe-store-tel:hover { color: #0051A7; }
-.qe-store-amenities {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 16px;
-  margin-bottom: 22px;
-}
-.qe-store-amenity {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.7);
-  font-weight: 500;
-}
-.qe-store-amenity svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
+.qe-store-tel:hover { color: #02DBB8; }
 .qe-store-directions-btn {
   display: flex;
   align-items: center;
@@ -1010,8 +1027,8 @@
   gap: 8px;
   width: 100%;
   padding: 14px;
-  background: #0051A7;
-  color: #1a0800;
+  background: #02DBB8;
+  color: #fff;
   font-size: 15px;
   font-weight: 700;
   border-radius: 12px;
@@ -1027,73 +1044,126 @@
   width: 18px;
   height: 18px;
 }
-.qe-store-map-wrap {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid #3a2418;
-  min-height: 420px;
-  background: #2b1810;
-}
-.qe-store-map-iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-  border: none;
-  display: block;
-}
-.qe-map-directions-btn {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 16px;
-  background: #0051A7;
-  color: #1a0800;
-  font-size: 13px;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  transition: opacity 0.2s;
-}
-.qe-map-directions-btn:hover { opacity: 0.9; }
-.qe-map-directions-btn svg {
-  width: 14px;
-  height: 14px;
-}
-.qe-store-map-fallback {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  min-height: 420px;
-  gap: 12px;
-  color: rgba(255,255,255,0.4);
-  font-size: 14px;
-}
-.qe-store-map-fallback svg {
-  width: 48px;
-  height: 48px;
-}
 
 @media (max-width: 900px) {
-  .qe-store-body {
-    grid-template-columns: 1fr;
+  .qe-store-section {
+    min-height: unset;
+    padding: 0;
+    display: block;
   }
-  .qe-store-map-wrap,
-  .qe-store-map-iframe {
-    min-height: 320px;
+  .qe-store-map-wrap {
+    position: relative;
+    height: 320px;
+  }
+  .qe-store-inner {
+    position: relative;
+    padding: 0 20px;
+    margin-top: -60px;
+  }
+  .qe-store-card {
+    max-width: 100%;
+    padding: 28px 24px 24px;
   }
 }
 @media (max-width: 600px) {
   .qe-brands-title { font-size: 24px; }
   .qe-store-title { font-size: 24px; }
   .qe-brand-tile { min-width: 130px; padding: 20px 18px 16px; }
-  .qe-store-card { padding: 20px 18px; }
-  .qe-store-amenities { grid-template-columns: 1fr; }
+  .qe-store-card { padding: 24px 18px 20px; }
+}
+
+/* ===== Why Choose Us (trust badges) ===== */
+.qe-why-section {
+  background: #00286F;
+  padding: 72px 20px;
+}
+.qe-why-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.qe-why-tag {
+  display: inline-block;
+  color: #02DBB8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.qe-why-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+.qe-why-title span {
+  color: #02DBB8;
+}
+.qe-why-subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin-bottom: 44px;
+}
+.qe-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.qe-why-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.qe-why-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #02DBB8 0%, #00A896 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.qe-why-icon svg {
+  width: 30px;
+  height: 30px;
+}
+.qe-why-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #14181f;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.qe-why-underline {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: #02DBB8;
+  margin-bottom: 14px;
+}
+.qe-why-card-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .qe-why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .qe-why-grid {
+    grid-template-columns: 1fr;
+  }
+  .qe-why-title { font-size: 24px; }
 }
