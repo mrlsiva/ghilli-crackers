@@ -64,7 +64,7 @@ const Header = ({ site }) => {
       </div>
       <header className="header">
         <div className="header-top">
-          <Link to="/home" className="logo" style={{ textDecoration: 'none' }}>
+          <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
             <img src={site?.logo ? resolveAssetUrl(site.logo) : '/images/logo.svg'} alt={site.name || 'Logo'} className="logo-image" />
             <span>{site?.name ? site.name.toUpperCase() : 'GHILLI CREAKERS'}</span>
           </Link>
@@ -84,7 +84,7 @@ const Header = ({ site }) => {
             style={{ '--header-height': `${headerHeight}px` }}
           >
             <ul className="nav-links">
-              <li><Link to="/home" className={pathname === '/home' ? 'nav-active' : ''}>Home</Link></li>
+              <li><Link to="/" className={pathname === '/' ? 'nav-active' : ''}>Home</Link></li>
               <li><Link to="/about-us" className={pathname === '/about-us' ? 'nav-active' : ''}>About</Link></li>
               <li>
                 <Link to="/products" className={pathname === '/products' ? 'nav-active' : ''}>

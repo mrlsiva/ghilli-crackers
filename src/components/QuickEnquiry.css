@@ -159,7 +159,7 @@
 .qe-cat-label {
   display: block;
   background: linear-gradient(90deg, #1a1a2e 0%, #2d2d4e 100%);
-  color: #0051A7;
+  color: var(--white);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;

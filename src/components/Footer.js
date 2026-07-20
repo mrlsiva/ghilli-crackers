@@ -31,14 +31,14 @@ const Footer = () => {
   const siteName = site?.name || 'Ghilli Crackers';
 
   const quickLinks = [
-    { label: 'Home', to: '/home' },
+    { label: 'Home', to: '/' },
     { label: 'About Us', to: '/about-us' },
     { label: 'Categories', to: '/products' },
     { label: 'How to Order', to: '/how-to-order' },
     { label: 'Safety Tips', to: '/safety-tips' },
     { label: 'Price List', to: '/price-list' },
     { label: 'Visit Store', to: '/contact' },
-    { label: 'Partner Brands', to: '/home#partner-brands' },
+    { label: 'Partner Brands', to: '/#partner-brands' },
   ];
 
   return (
