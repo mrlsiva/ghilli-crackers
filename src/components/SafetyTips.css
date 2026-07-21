@@ -18,9 +18,9 @@
 }
 .st-hero-badge {
   display: inline-block;
-  background: rgba(0, 81, 167, 0.18);
-  border: 1px solid rgba(0, 81, 167, 0.45);
-  color: #0051A7;
+  background: var(--primary-gold);
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-red);
   padding: 5px 16px;
   border-radius: 30px;
   font-size: 12px;

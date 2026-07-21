@@ -118,9 +118,9 @@ const Header = ({ site }) => {
           </nav>
           <div className="header-actions header-actions-desktop">
             <Link to="/order-track" className="call-now">
-              <span aria-hidden="true">📦</span> Order Track
+              Order Track
             </Link>
-            <Link to="/order" className="btn btn-order-now">Order Now</Link>
+            <Link to="/order" className="btn btn-order-now">Quick Enquiry</Link>
           </div>
         </div>
       </header>
