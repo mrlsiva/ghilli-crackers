@@ -153,7 +153,7 @@ const Home = () => {
       <FaqSection />
 
 
-      {festivalOffer && !isOfferExpired(festivalOffer.ends_at) && (
+      {/* {festivalOffer && !isOfferExpired(festivalOffer.ends_at) && (
         <section className="festival-offer">
           <div className="festival-offer-card">
             <div className="festival-offer-info">
@@ -195,7 +195,7 @@ const Home = () => {
             )}
           </div>
         </section>
-      )}
+      )} */}
       <AboutSection teaser />
   
       <HomeBottomSections />

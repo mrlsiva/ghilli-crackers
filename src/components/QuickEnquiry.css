@@ -8,7 +8,7 @@
 
 /* Header */
 .qe-header {
-  background: linear-gradient(135deg, #0051A7 0%, #00286F 100%);
+  background: linear-gradient(135deg, var(--primary-red) 0%, #00286F 100%);
   padding: 28px 20px 24px;
 }
 .qe-header-inner {
@@ -119,7 +119,7 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
 }
 .qe-table thead tr {
-  background: linear-gradient(90deg, #0051A7 0%, #0066CC 100%);
+  background: linear-gradient(90deg, var(--primary-red) 0%, #0066CC 100%);
 }
 .qe-table th {
   color: #fff;
@@ -166,7 +166,7 @@
   letter-spacing: 1px;
   padding: 8px 16px;
   margin-top: 6px;
-  border-left: 4px solid #0051A7;
+  border-left: 4px solid var(--primary-red);
 }
 
 /* Product Image */
@@ -215,7 +215,7 @@
   font-size: 13px;
 }
 .qe-discount {
-  color: #0051A7;
+  color: var(--primary-red);
   font-weight: 600;
   font-size: 13px;
 }
@@ -258,7 +258,7 @@
 .qe-qty-btn:hover:not(:disabled) { background: #f3f4f6; }
 .qe-qty-btn:disabled { color: #d1d5db; cursor: default; }
 .qe-qty-add:hover:not(:disabled) {
-  background: #0051A7;
+  background: var(--primary-red);
   color: #fff;
 }
 .qe-qty-input {
@@ -320,10 +320,10 @@
   z-index: 100;
   background: #1a1a2e;
   box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
-  border-top: 2px solid #0051A7;
+  border-top: 2px solid var(--primary-red);
 }
 .qe-min-order-warn {
-  background: #0051A7;
+  background: var(--primary-red);
   color: var(--white);
   font-size: 12px;
   font-weight: 600;
@@ -359,7 +359,7 @@
   flex: 1;
 }
 .qe-cart-badge {
-  background: #0051A7;
+  background: var(--primary-red);
   color: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -411,7 +411,7 @@
 }
 .qe-btn-clear:hover {
   background: rgba(0, 81, 167,0.3);
-  border-color: #0051A7;
+  border-color: var(--primary-red);
   color: #fff;
 }
 .qe-btn-checkout {
@@ -468,7 +468,7 @@
   justify-content: space-between;
   padding: 20px 24px;
   border-bottom: 1px solid #f1f3f7;
-  background: linear-gradient(135deg, #0051A7 0%, #00286F 100%);
+  background: linear-gradient(135deg, var(--primary-red) 0%, #00286F 100%);
 }
 .qe-modal-header h3 {
   color: #fff;
@@ -531,7 +531,7 @@
   font-size: 15px;
   color: #374151;
 }
-.qe-summary-total strong { color: #0051A7; font-size: 20px; }
+.qe-summary-total strong { color: var(--primary-red); font-size: 20px; }
 
 /* Checkout Form */
 .qe-form-grid {
@@ -562,7 +562,7 @@
 }
 .qe-field input:focus,
 .qe-field textarea:focus {
-  border-color: #0051A7;
+  border-color: var(--primary-red);
   box-shadow: 0 0 0 3px rgba(0, 81, 167,0.1);
 }
 
@@ -570,7 +570,7 @@
 .qe-btn-place-order {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #0051A7 0%, #00286F 100%);
+  background: linear-gradient(135deg, var(--primary-red) 0%, #00286F 100%);
   border: none;
   border-radius: 10px;
   color: #fff;
@@ -703,7 +703,7 @@
   /* category separator */
   .qe-mobile-cat {
     background: #1a1035;
-    color: var(--primary-gold, #0051A7);
+    color: var(--primary-gold, var(--primary-red));
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -804,7 +804,7 @@
   letter-spacing: -0.3px;
 }
 .qe-brands-title span {
-  color: #0051A7;
+  color: var(--primary-gold);
 }
 .qe-brands-track-wrap {
   overflow-x: auto;
@@ -817,14 +817,13 @@
   gap: 20px;
   padding: 4px 2px 12px;
   min-width: max-content;
+  justify-content: space-evenly;
 }
 .qe-brand-tile {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  background: #2b1810;
-  border: 1px solid #3a2418;
   border-radius: 16px;
   padding: 28px 32px 22px;
   min-width: 160px;
@@ -832,7 +831,7 @@
   cursor: default;
 }
 .qe-brand-tile:hover {
-  border-color: #0051A7;
+  border-color: var(--primary-red);
   transform: translateY(-4px);
 }
 .qe-brand-img {

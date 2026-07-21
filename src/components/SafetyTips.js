@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getSafetyTips } from '../services/api';
+import { getSafetyTips, resolveAssetUrl } from '../services/api';
 import './SafetyTips.css';
 
 const SafetyTips = () => {
@@ -62,7 +62,7 @@ const SafetyTips = () => {
                   {images.map((img, i) => (
                     <img
                       key={i}
-                      src={img.image}
+                      src={resolveAssetUrl(img.image)}
                       alt={`Safety tip ${i + 1}`}
                       className="st-banner-img"
                     />
