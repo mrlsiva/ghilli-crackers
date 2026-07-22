@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getContentPage, getPriceLists, resolveAssetUrl } from '../services/api';
 
 const DEFAULT_BANNER_TEXT = '🎆 Diwali Booking Started...! | 80% Discount offer 🎆 | Minimum order for Tamil Nadu ₹3,000/- | Other states ₹5,000/-';
@@ -12,10 +12,22 @@ const stripHtml = (html) => {
 
 const Header = ({ site }) => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [bannerText, setBannerText] = useState(DEFAULT_BANNER_TEXT);
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [orderLoading, setOrderLoading] = useState(false);
   const headerRef = useRef(null);
+
+  const handleOrderClick = (e) => {
+    e.preventDefault();
+    if (orderLoading) return;
+    setOrderLoading(true);
+    setTimeout(() => {
+      navigate('/order');
+      setOrderLoading(false);
+    }, 600);
+  };
 
   useEffect(() => {
     setMenuOpen(false);
@@ -113,14 +125,50 @@ const Header = ({ site }) => {
               <Link to="/order-track" className="call-now">
                 <span aria-hidden="true">📦</span> Order Track
               </Link>
-              <Link to="/order" className="btn btn-order-now">Order Now</Link>
+              <Link
+                to="/order"
+                className={`btn btn-order-now${orderLoading ? ' is-loading' : ''}`}
+                onClick={handleOrderClick}
+                aria-busy={orderLoading}
+              >
+                <span className="btn-spark btn-spark-1" aria-hidden="true" />
+                <span className="btn-spark btn-spark-2" aria-hidden="true" />
+                <span className="btn-spark btn-spark-3" aria-hidden="true" />
+                <span className="btn-spark btn-spark-4" aria-hidden="true" />
+                {orderLoading ? (
+                  <span className="btn-order-loading">
+                    <span className="btn-cracker-fuse" aria-hidden="true">🧨</span>
+                    Booking...
+                  </span>
+                ) : (
+                  'Order Now'
+                )}
+              </Link>
             </div>
           </nav>
           <div className="header-actions header-actions-desktop">
             <Link to="/order-track" className="call-now">
               Order Track
             </Link>
-            <Link to="/order" className="btn btn-order-now">Quick Enquiry</Link>
+            <Link
+              to="/order"
+              className={`btn btn-order-now${orderLoading ? ' is-loading' : ''}`}
+              onClick={handleOrderClick}
+              aria-busy={orderLoading}
+            >
+              <span className="btn-spark btn-spark-1" aria-hidden="true" />
+              <span className="btn-spark btn-spark-2" aria-hidden="true" />
+              <span className="btn-spark btn-spark-3" aria-hidden="true" />
+              <span className="btn-spark btn-spark-4" aria-hidden="true" />
+              {orderLoading ? (
+                <span className="btn-order-loading">
+                  <span className="btn-cracker-fuse" aria-hidden="true">🧨</span>
+                  Booking...
+                </span>
+              ) : (
+                'Quick Enquiry'
+              )}
+            </Link>
           </div>
         </div>
       </header>

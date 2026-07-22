@@ -357,6 +357,117 @@ body.menu-open {
   color: var(--white);
   padding: 10px 26px;
   border-radius: 24px;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  animation: btn-order-pulse 2.2s ease-in-out infinite;
+}
+
+.btn-spark {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: btn-spark-burst 2.2s ease-in-out infinite;
+}
+
+.btn-spark-1 {
+  top: -4px;
+  left: 14%;
+  background: #ffd23f;
+  --tx: -6px;
+  --ty: -10px;
+  animation-delay: 0s;
+}
+
+.btn-spark-2 {
+  top: -4px;
+  right: 14%;
+  background: #ff6347;
+  --tx: 8px;
+  --ty: -8px;
+  animation-delay: 0.3s;
+}
+
+.btn-spark-3 {
+  bottom: -4px;
+  left: 20%;
+  background: #ff4500;
+  --tx: -8px;
+  --ty: 8px;
+  animation-delay: 0.6s;
+}
+
+.btn-spark-4 {
+  bottom: -4px;
+  right: 20%;
+  background: #ffd23f;
+  --tx: 6px;
+  --ty: 10px;
+  animation-delay: 0.9s;
+}
+
+@keyframes btn-order-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 106, 0, 0);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes btn-spark-burst {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.3);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(calc(var(--tx) * 0.5), calc(var(--ty) * 0.5)) scale(1);
+  }
+  70% {
+    opacity: 0.6;
+    transform: translate(var(--tx), var(--ty)) scale(0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-order-now,
+  .btn-spark {
+    animation: none;
+  }
+}
+
+.btn-order-now.is-loading {
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-order-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-cracker-fuse {
+  display: inline-block;
+  font-size: 15px;
+  animation: btn-cracker-fuse-shake 0.5s ease-in-out infinite;
+}
+
+@keyframes btn-cracker-fuse-shake {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50% { transform: rotate(8deg) scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-cracker-fuse {
+    animation: none;
+  }
 }
 
 .header-actions-mobile {
