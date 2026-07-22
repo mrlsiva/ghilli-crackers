@@ -165,6 +165,10 @@ export const getSafetyTips = (slug = SITE_SLUG) =>
 export const getPriceLists = (slug = SITE_SLUG) =>
   cached(`price-lists:${slug}`, () => api.get(`/${slug}/price-lists`).then((r) => r.data));
 
+// Always hits the backend fresh — generates a branded PDF live from current product/price data.
+export const getPriceListDownloadUrl = (slug = SITE_SLUG) =>
+  `${API_BASE_URL}/${slug}/price-list/download`;
+
 // FAQs
 export const getFaqs = (slug = SITE_SLUG) =>
   cached(`faqs:${slug}`, () => api.get(`/${slug}/faqs`).then((r) => r.data));

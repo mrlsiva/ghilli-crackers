@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { getContentPage, getPriceLists, resolveAssetUrl } from '../services/api';
+import { getContentPage, getPriceListDownloadUrl, resolveAssetUrl } from '../services/api';
 
 const DEFAULT_BANNER_TEXT = '🎆 Diwali Booking Started...! | 80% Discount offer 🎆 | Minimum order for Tamil Nadu ₹3,000/- | Other states ₹5,000/-';
 
@@ -17,6 +17,7 @@ const Header = ({ site }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
   const [orderLoading, setOrderLoading] = useState(false);
+  const [priceListLoading, setPriceListLoading] = useState(false);
   const headerRef = useRef(null);
 
   const handleOrderClick = (e) => {
@@ -27,6 +28,14 @@ const Header = ({ site }) => {
       navigate('/order');
       setOrderLoading(false);
     }, 600);
+  };
+
+  const handlePriceListClick = (e) => {
+    e.preventDefault();
+    if (priceListLoading) return;
+    setPriceListLoading(true);
+    window.location.href = getPriceListDownloadUrl();
+    setTimeout(() => setPriceListLoading(false), 1200);
   };
 
   useEffect(() => {
@@ -106,15 +115,19 @@ const Header = ({ site }) => {
               <li><Link to="/how-to-order" className={pathname === '/how-to-order' ? 'nav-active' : ''}>How to Order</Link></li>
               <li><Link to="/safety-tips" className={pathname === '/safety-tips' ? 'nav-active' : ''}>Safety Tips</Link></li>
               <li>
-                <Link className="nav-pdf-btn"
-                  onClick={async () => {
-                    const res = await getPriceLists();
-                    const url = res?.data?.[0]?.url;
-                    if (url) window.open(resolveAssetUrl(url), '_blank');
-                  }}
+                <Link
+                  className="nav-pdf-btn"
+                  aria-busy={priceListLoading}
+                  onClick={handlePriceListClick}
                 >
-                  Price List
-
+                  {priceListLoading ? (
+                    <span className="btn-order-loading">
+                      <span className="btn-cracker-fuse" aria-hidden="true">🧨</span>
+                      Generating...
+                    </span>
+                  ) : (
+                    'Price List'
+                  )}
                 </Link>
               </li>
               <li>
