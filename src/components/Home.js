@@ -137,8 +137,16 @@ const Home = () => {
                 href={btn.url}
                 target={btn.open_in_new_tab ? '_blank' : undefined}
                 rel={btn.open_in_new_tab ? 'noopener noreferrer' : undefined}
-                className={`btn ${idx === 0 ? 'btn-primary' : 'btn-outline-gold'} btn-lg`}
+                className={`btn ${idx === 0 ? 'btn-primary btn-order-now' : 'btn-outline-gold'} btn-lg`}
               >
+                {idx === 0 && (
+                  <>
+                    <span className="btn-spark btn-spark-1" aria-hidden="true" />
+                    <span className="btn-spark btn-spark-2" aria-hidden="true" />
+                    <span className="btn-spark btn-spark-3" aria-hidden="true" />
+                    <span className="btn-spark btn-spark-4" aria-hidden="true" />
+                  </>
+                )}
                 {btn.label}
               </a>
             ))}
