@@ -87,7 +87,7 @@ const Header = ({ site }) => {
         <div className="header-top">
           <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
             <img src={site?.logo ? resolveAssetUrl(site.logo) : '/images/logo.svg'} alt={site.name || 'Logo'} className="logo-image" />
-            <span>{site?.name ? site.name.toUpperCase() : 'GHILLI CREAKERS'}</span>
+            <span>{site?.name ? site.name.toUpperCase() : 'GHILLI CRACKERS'}</span>
           </Link>
           <button
             type="button"
